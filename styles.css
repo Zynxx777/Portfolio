@@ -11,6 +11,7 @@ body {
   background-image: url('img/background.webp');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .hotspot {
@@ -24,6 +25,7 @@ body {
   opacity: 0.9; /* Slight fade effect on hover */
 }
 
+/* PC Area */
 .hotspot.pc-area {
   top: 50%;
   left: 70%;
@@ -31,28 +33,31 @@ body {
   height: 20%;
 }
 
+/* Bookshelf Area */
 .hotspot.bookshelf-area {
   top: 80%;
-  left: 0%;
-  width: 8%;
-  height: 100%;
+  left: 5%; /* Adjusted for spacing */
+  width: 10%;
+  height: 15%;
 }
 
+/* Poster Area */
 .hotspot.poster-area {
   top: 15%;
   right: 35%;
-  width: 10%;
-  height: 30%;
+  width: 12%; /* Slightly larger */
+  height: 25%;
 }
 
+/* Certificates Area */
 .hotspot.certificates-area {
   top: 10%;
   right: 18%;
-  width: 10%;
-  height: 30%;
+  width: 12%;
+  height: 25%;
 }
 
-/* Optional: Adding a preview effect (can be used to display additional info) */
+/* Hover effect text for hotspots */
 .hotspot.pc-area:hover::after,
 .hotspot.bookshelf-area:hover::after,
 .hotspot.poster-area:hover::after,
@@ -71,3 +76,44 @@ body {
   pointer-events: none;
 }
 
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .background {
+    height: auto; /* Adjust height */
+    background-size: contain; /* Fit the background properly */
+  }
+
+  .hotspot.pc-area {
+    top: 40%; /* Adjusted for smaller screens */
+    left: 60%;
+    width: 20%; /* Larger area for touch */
+    height: 15%;
+  }
+
+  .hotspot.bookshelf-area {
+    top: 85%;
+    left: 5%;
+    width: 12%; /* Adjusted for visibility */
+    height: 12%;
+  }
+
+  .hotspot.poster-area {
+    top: 20%;
+    right: 25%; /* Adjusted for better spacing */
+    width: 15%; /* Larger for touch targets */
+    height: 20%;
+  }
+
+  .hotspot.certificates-area {
+    top: 15%;
+    right: 15%;
+    width: 15%;
+    height: 20%;
+  }
+
+  /* Hover effect text adjustments */
+  .hotspot:hover::after {
+    font-size: 0.8rem; /* Smaller text for mobile screens */
+    padding: 8px;
+  }
+}

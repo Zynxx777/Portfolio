@@ -20,49 +20,44 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Hover effect */
 .hotspot:hover {
   transform: scale(1.1); /* Zoom effect */
-  opacity: 0.9; /* Slight fade effect on hover */
+  opacity: 0.8; /* Slight fade effect on hover */
 }
 
-/* PC Area */
+/* Specific hotspot areas */
 .hotspot.pc-area {
   top: 50%;
   left: 70%;
-  width: 15%;
+  width: 12%;
   height: 20%;
 }
 
-/* Bookshelf Area */
 .hotspot.bookshelf-area {
-  top: 80%;
-  left: 5%; /* Adjusted for spacing */
-  width: 10%;
-  height: 15%;
+  top: 10%;
+  right: 0%;
+  width: 8%;
+  height: 100%;
 }
 
-/* Poster Area */
-.hotspot.poster-area {
+.hotspot.posters-area {
   top: 15%;
   right: 35%;
-  width: 12%; /* Slightly larger */
-  height: 25%;
+  width: 10%;
+  height: 30%;
 }
 
-/* Certificates Area */
 .hotspot.certificates-area {
   top: 10%;
   right: 18%;
-  width: 12%;
-  height: 25%;
+  width: 10%;
+  height: 30%;
 }
 
-/* Hover effect text for hotspots */
-.hotspot.pc-area:hover::after,
-.hotspot.bookshelf-area:hover::after,
-.hotspot.poster-area:hover::after,
-.hotspot.certificates-area:hover::after {
-  content: attr(data-hover); /* Display data-hover attribute text on hover */
+/* Optional: Adding preview text on hover */
+.hotspot::after {
+  content: attr(data-hover);
   position: absolute;
   top: -25px;
   left: 50%;
@@ -72,19 +67,25 @@ body {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 5px;
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show preview text when hovered */
+.hotspot:hover::after {
+  opacity: 1;
 }
 
 /* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .background {
-    height: auto; /* Adjust height */
-    background-size: contain; /* Fit the background properly */
+    height: auto; /* Adjust height for smaller screens */
+    background-size: contain; /* Fit background properly */
   }
 
   .hotspot.pc-area {
-    top: 40%; /* Adjusted for smaller screens */
+    top: 45%; /* Adjusted for smaller screens */
     left: 60%;
     width: 20%; /* Larger area for touch */
     height: 15%;
@@ -93,12 +94,12 @@ body {
   .hotspot.bookshelf-area {
     top: 85%;
     left: 5%;
-    width: 12%; /* Adjusted for visibility */
+    width: 12%; /* Adjusted for better visibility */
     height: 12%;
   }
 
-  .hotspot.poster-area {
-    top: 20%;
+  .hotspot.posters-area {
+    top: 25%;
     right: 25%; /* Adjusted for better spacing */
     width: 15%; /* Larger for touch targets */
     height: 20%;
@@ -115,5 +116,42 @@ body {
   .hotspot:hover::after {
     font-size: 0.8rem; /* Smaller text for mobile screens */
     padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for even smaller screens (like mobile devices) */
+  .hotspot.pc-area {
+    top: 50%;
+    left: 50%;
+    width: 30%; /* Larger area for touch */
+    height: 20%;
+  }
+
+  .hotspot.bookshelf-area {
+    top: 90%;
+    left: 5%;
+    width: 20%; /* Adjusted for visibility */
+    height: 15%;
+  }
+
+  .hotspot.posters-area {
+    top: 30%;
+    right: 20%; /* Adjusted for better spacing */
+    width: 20%;
+    height: 15%;
+  }
+
+  .hotspot.certificates-area {
+    top: 20%;
+    right: 10%;
+    width: 20%;
+    height: 15%;
+  }
+
+  /* Smaller font size for mobile hover text */
+  .hotspot:hover::after {
+    font-size: 0.7rem;
+    padding: 6px 10px;
   }
 }

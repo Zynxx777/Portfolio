@@ -1,144 +1,138 @@
 body {
-
   margin: 0;
-
   padding: 0;
-
   font-family: Arial, sans-serif;
-
 }
-
-
 
 .background {
-
   position: relative;
-
   width: 100%;
-
   height: 100vh;
-
   background-image: url('img/background.webp');
-
-  background-size: cover;
-
-  background-position: center;
-
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the image */
 }
-
-
 
 .hotspot {
-
   position: absolute;
-
   cursor: pointer;
-
   transition: transform 0.3s ease, opacity 0.3s ease;
-
 }
-
-
 
 .hotspot:hover {
-
   transform: scale(1.1); /* Zoom effect */
-
   opacity: 0.9; /* Slight fade effect on hover */
-
 }
-
-
 
 .hotspot.pc-area {
-
   top: 50%;
-
   left: 70%;
-
   width: 15%;
-
   height: 20%;
-
 }
-
-
 
 .hotspot.bookshelf-area {
-
   top: 80%;
-
   left: 0%;
-
   width: 8%;
-
   height: 100%;
-
 }
-
-
 
 .hotspot.poster-area {
-
   top: 15%;
-
   right: 35%;
-
   width: 10%;
-
   height: 30%;
-
 }
-
-
 
 .hotspot.certificates-area {
-
   top: 10%;
-
   right: 18%;
-
   width: 10%;
-
   height: 30%;
-
 }
-
-
 
 /* Optional: Adding a preview effect (can be used to display additional info) */
-
 .hotspot.pc-area:hover::after,
-
 .hotspot.bookshelf-area:hover::after,
-
 .hotspot.poster-area:hover::after,
-
 .hotspot.certificates-area:hover::after {
-
   content: attr(data-hover); /* Display data-hover attribute text on hover */
-
   position: absolute;
-
   top: -25px;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   background-color: rgba(0, 0, 0, 0.7);
-
   color: white;
-
   padding: 5px 10px;
-
   font-size: 12px;
-
   border-radius: 5px;
-
   opacity: 1;
-
   pointer-events: none;
-
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .hotspot.pc-area {
+    left: 65%;
+    width: 14%;
+  }
+  .hotspot.bookshelf-area {
+    width: 10%;
+  }
+  .hotspot.poster-area {
+    width: 12%;
+  }
+  .hotspot.certificates-area {
+    width: 12%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hotspot.pc-area {
+    left: 60%;
+    width: 16%;
+  }
+  .hotspot.bookshelf-area {
+    width: 12%;
+  }
+  .hotspot.poster-area {
+    width: 14%;
+  }
+  .hotspot.certificates-area {
+    width: 14%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hotspot.pc-area {
+    left: 55%;
+    width: 18%;
+  }
+  .hotspot.bookshelf-area {
+    width: 14%;
+  }
+  .hotspot.poster-area {
+    width: 16%;
+  }
+  .hotspot.certificates-area {
+    width: 16%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hotspot.pc-area {
+    left: 50%;
+    width: 20%;
+  }
+  .hotspot.bookshelf-area {
+    width: 16%;
+  }
+  .hotspot.poster-area {
+    width: 18%;
+  }
+  .hotspot.certificates-area {
+    width: 18%;
+  }
+}

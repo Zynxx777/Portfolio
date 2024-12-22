@@ -59,7 +59,7 @@
     }
 
     .hotspot:hover::after {
-      opacity: 75;
+      opacity: 1;
     }
 
     .container {
@@ -99,13 +99,6 @@
       font-weight: 600;
       background-color: rgba(255, 255, 255, 0.95);
     }
-
-    #resume-content {
-      width: 100%;
-      height: 800px;
-      border: none;
-      background-color: transparent;
-    }
   </style>
 </head>
 <body>
@@ -119,7 +112,7 @@
           <button class="nav-link active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="true">Technical Skills</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="resume-tab" data-bs-toggle="tab" data-bs-target="#resume" type="button" role="tab" aria-controls="resume" aria-selected="false">Resume</button>
+          <a class="nav-link" href="resume.html" role="tab">Resume</a>
         </li>
       </ul>
 
@@ -128,7 +121,6 @@
         <!-- Skills Tab -->
         <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
           <div class="row">
-            <!-- [Previous skills cards remain the same...] -->
             <!-- Skill 1 -->
             <div class="col-md-4">
               <div class="card">
@@ -138,13 +130,88 @@
                 </div>
               </div>
             </div>
-            <!-- [Rest of the skills cards...] -->
+            <!-- Skill 2 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">JavaScript</h5>
+                  <p class="card-text">Skilled in adding interactivity to web pages using Vanilla JavaScript.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 3 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Bootstrap</h5>
+                  <p class="card-text">Experienced with building responsive and modern UI components using Bootstrap.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 4 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Android Development</h5>
+                  <p class="card-text">Java, Android Studio, Custom ROMs, Rooting, Magisk.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 5 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">CyberSecurity</h5>
+                  <p class="card-text">Penetration Testing (Beginner), Cryptography, Hash Functions (SHA-256, MD5).</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 6 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Operating Systems</h5>
+                  <p class="card-text">Arch Linux, Windows 10, Zorin OS.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 7 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Technical Troubleshooting</h5>
+                  <p class="card-text">Bootloader Unlocking, Custom ROM Installation, System Optimization.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 8 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Programming</h5>
+                  <p class="card-text">Python, Java (Basics).</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 9 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Music Production & Sound Design</h5>
+                  <p class="card-text">FL Studio, Ableton, Serum, Vital.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 10 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Soft Skills</h5>
+                  <p class="card-text">Problem-solving, Teamwork, Communication.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <!-- Resume Tab -->
-        <div class="tab-pane fade" id="resume" role="tabpanel" aria-labelledby="resume-tab">
-          <iframe id="resume-content" src="resume.html"></iframe>
         </div>
       </div>
 
@@ -158,28 +225,12 @@
   <div class="hotspot resume-area" data-hover="Resume Area"></div>
 
   <script>
-    // Hotspot click handler
     document.querySelectorAll('.hotspot').forEach(hotspot => {
         hotspot.addEventListener('click', () => {
             if (hotspot.classList.contains('resume-area')) {
-                // Switch to resume tab
-                document.getElementById('resume-tab').click();
-                // Scroll to top of container
-                document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+                window.location.href = 'resume.html';
             }
         });
-    });
-
-    // Handle iframe resize
-    window.addEventListener('load', () => {
-        const iframe = document.getElementById('resume-content');
-        iframe.onload = function() {
-            try {
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-            } catch(e) {
-                console.log('Could not adjust iframe height');
-            }
-        };
     });
   </script>
 

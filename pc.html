@@ -21,7 +21,6 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 20px 0;
     }
 
     .hotspot {
@@ -41,7 +40,6 @@
         width: 12%;
         height: 20%;
         background-color: rgba(255, 255, 255, 0);
-        z-index: 20;
     }
 
     .hotspot::after {
@@ -67,77 +65,50 @@
     .container {
       position: relative;
       z-index: 10;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 15px;
       margin-top: 20px;
       margin-bottom: 20px;
-      backdrop-filter: blur(5px);
     }
 
     .card {
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 20px;
-      background-color: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.95);
     }
 
     .card:hover {
       transform: scale(1.05);
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-      background-color: rgba(255, 255, 255, 0.9);
     }
 
     .nav-tabs {
       margin-bottom: 30px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .nav-tabs .nav-link {
       color: #495057;
       font-weight: 500;
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      margin-right: 5px;
-      border-radius: 5px 5px 0 0;
+      background-color: rgba(255, 255, 255, 0.9);
     }
 
     .nav-tabs .nav-link.active {
       color: #007bff;
       font-weight: 600;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    #resume-content {
+      width: 100%;
+      height: 800px;
       border: none;
-    }
-
-    .nav-tabs .nav-link:hover {
-      border-color: transparent;
-      background-color: rgba(255, 255, 255, 0.9);
-    }
-
-    h1 {
-      color: #333;
-      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-    }
-
-    .card-title {
-      color: #007bff;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background-color: rgba(0, 123, 255, 0.8);
-      border: none;
-      backdrop-filter: blur(5px);
-    }
-
-    .btn-primary:hover {
-      background-color: rgba(0, 123, 255, 1);
+      background-color: transparent;
     }
   </style>
 </head>
 <body>
-  <!-- Rest of the HTML remains the same -->
   <div class="background">
     <div class="container py-5">
       <h1 class="text-center mb-4">My Technical Skills</h1>
@@ -148,7 +119,7 @@
           <button class="nav-link active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="true">Technical Skills</button>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" href="resume.html" role="tab">Resume</a>
+          <button class="nav-link" id="resume-tab" data-bs-toggle="tab" data-bs-target="#resume" type="button" role="tab" aria-controls="resume" aria-selected="false">Resume</button>
         </li>
       </ul>
 
@@ -157,8 +128,23 @@
         <!-- Skills Tab -->
         <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
           <div class="row">
-            <!-- [All skill cards remain the same...] -->
+            <!-- [Previous skills cards remain the same...] -->
+            <!-- Skill 1 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">HTML & CSS</h5>
+                  <p class="card-text">Proficient in creating responsive web designs using modern HTML and CSS.</p>
+                </div>
+              </div>
+            </div>
+            <!-- [Rest of the skills cards...] -->
           </div>
+        </div>
+
+        <!-- Resume Tab -->
+        <div class="tab-pane fade" id="resume" role="tabpanel" aria-labelledby="resume-tab">
+          <iframe id="resume-content" src="resume.html"></iframe>
         </div>
       </div>
 
@@ -168,16 +154,32 @@
     </div>
   </div>
 
-  <!-- Hotspot -->
+  <!-- Adding back the hotspot for "resume-area" -->
   <div class="hotspot resume-area" data-hover="Resume Area"></div>
 
   <script>
+    // Hotspot click handler
     document.querySelectorAll('.hotspot').forEach(hotspot => {
         hotspot.addEventListener('click', () => {
             if (hotspot.classList.contains('resume-area')) {
-                window.location.href = 'resume.html';
+                // Switch to resume tab
+                document.getElementById('resume-tab').click();
+                // Scroll to top of container
+                document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
             }
         });
+    });
+
+    // Handle iframe resize
+    window.addEventListener('load', () => {
+        const iframe = document.getElementById('resume-content');
+        iframe.onload = function() {
+            try {
+                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+            } catch(e) {
+                console.log('Could not adjust iframe height');
+            }
+        };
     });
   </script>
 

@@ -11,21 +11,72 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
     }
 
     .background {
       position: relative;
       width: 100%;
       min-height: 100vh;
-      background-color: white;
-      padding: 20px 0;
+      background-image: url('img/backiee.jpg'), url('img/backiee.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hotspot:hover {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+
+    .hotspot.resume-area {
+        top: 50%;
+        left: 70%;
+        width: 12%;
+        height: 20%;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .hotspot::after {
+      content: attr(data-hover);
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 5px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .hotspot:hover::after {
+      opacity: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .card {
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
     }
 
     .card:hover {
@@ -40,37 +91,20 @@
     .nav-tabs .nav-link {
       color: #495057;
       font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.9);
     }
 
     .nav-tabs .nav-link.active {
       color: #007bff;
       font-weight: 600;
-    }
-
-    #resume {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .resume-section {
-      margin-bottom: 30px;
-    }
-
-    .resume-section h3 {
-      border-bottom: 2px solid #007bff;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
     }
   </style>
 </head>
 <body>
   <div class="background">
     <div class="container py-5">
-      <h1 class="text-center mb-4">My Professional Profile</h1>
+      <h1 class="text-center mb-4">My Technical Skills</h1>
       
       <!-- Navigation Tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -78,7 +112,7 @@
           <button class="nav-link active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="true">Technical Skills</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="resume-tab" data-bs-toggle="tab" data-bs-target="#resume" type="button" role="tab" aria-controls="resume" aria-selected="false">Resume</button>
+          <a class="nav-link" href="resume.html" role="tab">Resume</a>
         </li>
       </ul>
 
@@ -123,30 +157,61 @@
                 </div>
               </div>
             </div>
-            <!-- Rest of the skills cards... -->
-            <!-- Add all other skills here -->
+            <!-- Skill 5 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">CyberSecurity</h5>
+                  <p class="card-text">Penetration Testing (Beginner), Cryptography, Hash Functions (SHA-256, MD5).</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 6 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Operating Systems</h5>
+                  <p class="card-text">Arch Linux, Windows 10, Zorin OS.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 7 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Technical Troubleshooting</h5>
+                  <p class="card-text">Bootloader Unlocking, Custom ROM Installation, System Optimization.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 8 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Programming</h5>
+                  <p class="card-text">Python, Java (Basics).</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 9 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Music Production & Sound Design</h5>
+                  <p class="card-text">FL Studio, Ableton, Serum, Vital.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Skill 10 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Soft Skills</h5>
+                  <p class="card-text">Problem-solving, Teamwork, Communication.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <!-- Resume Tab -->
-        <div class="tab-pane fade" id="resume" role="tabpanel" aria-labelledby="resume-tab">
-          <div class="resume-section">
-            <h3>Professional Summary</h3>
-            <p>A tech-savvy professional with expertise in web development, Android development, and cybersecurity. Passionate about creating efficient solutions and staying current with emerging technologies.</p>
-          </div>
-
-          <div class="resume-section">
-            <h3>Technical Skills</h3>
-            <ul>
-              <li>Web Development: HTML, CSS, JavaScript, Bootstrap</li>
-              <li>Mobile Development: Android Studio, Java, Custom ROM Development</li>
-              <li>Security: Penetration Testing, Cryptography, Hash Functions</li>
-              <li>Operating Systems: Arch Linux, Windows 10, Zorin OS</li>
-              <li>Other Skills: Music Production, Sound Design, Problem-solving</li>
-            </ul>
-          </div>
-
-          <!-- Add more resume sections as needed -->
         </div>
       </div>
 
@@ -155,6 +220,19 @@
       </div>
     </div>
   </div>
+
+  <!-- Adding back the hotspot for "resume-area" -->
+  <div class="hotspot resume-area" data-hover="Resume Area"></div>
+
+  <script>
+    document.querySelectorAll('.hotspot').forEach(hotspot => {
+        hotspot.addEventListener('click', () => {
+            if (hotspot.classList.contains('resume-area')) {
+                window.location.href = 'resume.html';
+            }
+        });
+    });
+  </script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

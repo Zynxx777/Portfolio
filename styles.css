@@ -1,38 +1,87 @@
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  overflow: hidden; /* To avoid scroll during animation */
 }
 
 .background {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  background-image: url('img/backiee.jpg'); /* Adjust to your preferred background image */
+  height: 100vh;
+  background-image: url('img/background.webp');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
 }
 
+/* Hotspots */
 .hotspot {
   position: absolute;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: hotspotZoomIn 2s ease-in forwards;
 }
 
 .hotspot:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+  transform: scale(1.1); /* Zoom effect */
+  opacity: 0.8; /* Slight fade effect on hover */
 }
 
-.hotspot.resume-area {
+.hotspot.pc-area {
   top: 50%;
   left: 70%;
   width: 12%;
   height: 20%;
-  background-color: rgba(255, 255, 255, 0);
 }
 
+.hotspot.bookshelf-area {
+  top: 10%;
+  right: 0%;
+  width: 8%;
+  height: 100%;
+}
+
+.hotspot.posters-area {
+  top: 15%;
+  right: 35%;
+  width: 10%;
+  height: 30%;
+}
+
+.hotspot.certificates-area {
+  top: 10%;
+  right: 18%;
+  width: 10%;
+  height: 30%;
+}
+
+/* Socials Button */
+.socials-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 2s ease-in 1s forwards;
+}
+
+.socials-button:hover {
+  background-color: #0056b3;
+}
+
+/* Preview Text Hover */
 .hotspot::after {
   content: attr(data-hover);
   position: absolute;
@@ -53,44 +102,44 @@ body {
   opacity: 1;
 }
 
-.container {
-  position: relative;
-  z-index: 10;
-  background-color: transparent; /* Make container background transparent */
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.card {
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 20px;
-  background-color: transparent; /* Make card background transparent */
-  color: white; /* Ensure text is visible on dark backgrounds */
+@keyframes hotspotZoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-}
-
-.nav-tabs {
-  margin-bottom: 30px;
-}
-
-.nav-tabs .nav-link {
-  color: white; /* Ensure text is visible on dark backgrounds */
-  font-weight: 500;
-  background-color: transparent; /* Make tabs background transparent */
-  border: 1px solid rgba(255, 255, 255, 0.5); /* Add border for visibility */
-  border-radius: 5px;
-}
-
-.nav-tabs .nav-link.active {
-  color: #007bff;
-  font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.5); /* Slight dark background for active tab */
-  border: 1px solid #007bff;
+/* Responsiveness */
+@media (max-width: 576px) {
+  .hotspot.pc-area {
+    left: 50%;
+    width: 20%;
+  }
+  .hotspot.bookshelf-area {
+    width: 16%;
+  }
+  .hotspot.posters-area {
+    width: 18%;
+  }
+  .hotspot.certificates-area {
+    width: 18%;
+  }
+  .socials-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }

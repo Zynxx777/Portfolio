@@ -6,7 +6,7 @@ body {
   overflow: hidden; /* To avoid scroll during animation */
 }
 
-background {
+.background {
   position: relative;
   width: 100vw; /* Use viewport width */
   height: 100dvh; /* Use dynamic viewport height */

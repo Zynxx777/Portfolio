@@ -8,28 +8,26 @@ body {
 
 .background {
   position: relative;
-  width: 100vw; /* Use viewport width */
-  height: 100dvh; /* Use dynamic viewport height */
+  width: 100%;
+  height: 100dvh;
   background-image: url('img/background.webp');
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* Fallback for browsers that don't support dvh */
-@supports not (height: 100dvh) {
+/* Default landscape mode */
+@media (orientation: landscape) {
   .background {
-    height: 100vh;
+    background-size: cover;
   }
 }
 
-/* For mobile devices */
-@media (max-width: 768px) {
+/* Portrait mode adjustments */
+@media (orientation: portrait) {
   .background {
-    height: -webkit-fill-available; /* For iOS Safari */
-    height: 100dvh; /* Modern browsers */
-    min-height: -webkit-fill-available;
-    background-attachment: scroll;
+    background-size: contain; /* This ensures the full image is always visible */
+    /* Alternative approach: */
+    /* background-size: auto 100%; */ /* This will make the image height match the screen */
   }
 }
 .hotspot:hover {

@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Bedroom Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bedroom Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="background">
-    <!-- Hotspots -->
-    <a href="pc.html" class="hotspot pc-area" data-hover="PC Area"></a>
-    <a href="books.html" class="hotspot bookshelf-area" data-hover="Bookshelf"></a>
-    <a href="posters.html" class="hotspot posters-area" data-hover="Posters"></a>
-    <a href="certificates.html" class="hotspot certificates-area" data-hover="Certificates"></a>
+    <div class="background">
+        <img src="img/background.webp" alt="background" class="background-image">
+        <!-- Hotspots -->
+        <a href="pc.html" class="hotspot pc-area" data-hover="PC Area"></a>
+        <a href="books.html" class="hotspot bookshelf-area" data-hover="Bookshelf"></a>
+        <a href="posters.html" class="hotspot posters-area" data-hover="Posters"></a>
+        <a href="certificates.html" class="hotspot certificates-area" data-hover="Certificates"></a>
 
-    <!-- Socials Button -->
-    <button class="socials-button" onclick="window.location.href='posters.html'">
-      Connect with Me
-    </button>
-  </div>
-
-  <script>
-    // JavaScript for Hotspots
-    document.querySelectorAll('.hotspot').forEach(hotspot => {
-      hotspot.addEventListener('click', () => {
-        const targetMap = {
-          'pc-area': 'pc.html',
-          'bookshelf-area': 'books.html',
-          'posters-area': 'posters.html',
-          'certificates-area': 'certificates.html',
-        };
-        const target = Object.keys(targetMap).find(cls => hotspot.classList.contains(cls));
-        if (target) window.location.href = targetMap[target];
-      });
-    });
-  </script>
+        <!-- Socials Button -->
+        <button class="socials-button" onclick="window.location.href='posters.html'">
+            Connect with Me
+        </button>
+    </div>
 </body>
 </html>

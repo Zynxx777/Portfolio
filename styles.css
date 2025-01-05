@@ -8,14 +8,28 @@ body {
 
 .background {
   position: relative;
-  max-width: 100%;
-  height: auto;
-  background-image: url('img/background.webp'); /* Path to your image */
+  width: 100%;
+  height: 100vh;
+  background-image: url('img/background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .background {
+    background-attachment: scroll; /* Remove fixed attachment on mobile */
+    min-height: 100vh; /* Use min-height instead of height */
+    height: auto;
+  }
+}
+
+/* Additional fix for iOS devices specifically */
+@supports (-webkit-touch-callout: none) {
+  .background {
+    background-attachment: scroll;
+  }
 /* Hotspots */
 .hotspot {
   position: absolute;

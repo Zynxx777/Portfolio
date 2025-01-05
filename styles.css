@@ -13,13 +13,15 @@ body {
   background-image: url('img/background.webp'); /* Path to your image */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 @media (orientation: portrait) {
   .background {
-    background-size: contain; /* Scale to fit vertically */
-    height: auto; /* Allow dynamic height adjustment for portrait view */
+    background-size: cover; /* Ensure it still covers the viewport */
+    height: 100vh; /* Set explicit height for portrait mode */
+    background-position: center; /* Center the image */
   }
 }
 /* Hotspots */

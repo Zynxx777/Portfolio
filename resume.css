@@ -100,16 +100,6 @@ ul li {
     text-decoration: underline;
 }
 
-/* New Section Styles */
-.android-development,
-.cybersecurity,
-.technical-troubleshooting {
-    background-color: #e8f5e9;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
 .android-development h2,
 .cybersecurity h2,
 .technical-troubleshooting h2 {

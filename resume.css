@@ -100,26 +100,6 @@ ul li {
     text-decoration: underline;
 }
 
-.android-development h2,
-.cybersecurity h2,
-.technical-troubleshooting h2 {
-    color: #388e3c;
-}
-
-.android-development ul,
-.cybersecurity ul,
-.technical-troubleshooting ul {
-    padding-left: 20px;
-    list-style-type: circle;
-}
-
-.android-development li,
-.cybersecurity li,
-.technical-troubleshooting li {
-    color: #2e7d32;
-    margin-bottom: 8px;
-}
-
 /* Footer Styles */
 footer {
     text-align: center;

@@ -1,123 +1,102 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYNX Resume</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>JOSHUA D</h1>   
+                <p>Electronics & Communication Engineer | Full-Stack & Android Developer | Cybersecurity & Reverse Engineering Enthusiast</p>
+            </div>
+            <div class="header-right">
+                <p><strong>Location:</strong> Channapatna, Ramnagar, KA</p>
+                <p><strong>Email:</strong> <a href="mailto:joshuajosh3055@gmail.com">joshuajosh3055@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel: +91 72599 87691">+91 72599 87691</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/Zynxx777" target="_blank">github.com/Zynxx777</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/joshua-d-8155a8228" target="_blank">in.linkedin.com/in/joshua-d8155a8228</a></p>
+            </div>
+        </header>
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        <section class="objective">
+            <h3>Objective</h3>
+            <p>Driven by curiosity and a passion in exploring Tech and Electronics for breaking, building, and optimizing systems. Skilled in full-stack and Android development, with a strong inclination toward cybersecurity, reverse engineering, and troubleshooting complex tech. Always pushing boundaries, learning new technologies, and seeking opportunities to innovate and create impactful solutions.</p>
+        </section>
 
-/* Header Styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
+        <section class="education">
+            <h3>Education</h3>
+            <p><strong>ELECTRONICS AND COMMUNICATION ENGINEERING (B.E. ECE), Don Bosco Institute of Technology
+                CGPA: 7.16 | Expected Graduation: Nov 2025</strong></p>
+            <p><strong>71.6% in Shanthiniketan PU College | JULY 2021</strong></p>
+            <p><strong>78.72% in St. Joseph's Eng Med High School | APRIL 2019</strong></p>
+            <ul>
+                <li>Relevant Coursework: Electronics, Tele-Communication, Web Development, Embedded Systems, AI & ML, Electric Vehicles, Cybersecurity, R&D</li>
+            </ul>
+        </section>
 
-header h1 {
-    font-size: 2em;
-    color: #1a73e8;
-}
+        <section class="skills">
+            <h3>Core Skills</h3>
+            <div class="skills-grid">
+                <div><strong>Web Development</strong><p>React, Typescript, Angular,Tailwind, HTML, CSS, JavaScript, Bootstrap, SCSS</p></div>
+                <div><strong>Backend Development</strong><p>Next.js, Node.js, Express, MongoDB, PG-SQL, .NET (Learning Phase)</p></div>
+                <div><strong>Android Development</strong><p>Java, Android Studio, Kotlin, Dart, Custom ROMs, Rooting, Magisk</p></div>
+                <div><strong>Cybersecurity</strong><p>Pentesting, Cryptography, Hash</p></div>
+                <div><strong>Technical Troubleshooting</strong><p>Bootloader Unlocking, Custom ROM Installation, System Optimization</p></div>
+                <div><strong>OS & Tools</strong><p>Arch Linux, Windows, Nix, Git, Figma, Vite</p></div>
+                <div><strong>Programming</strong><p>Java, C++, Python, RUST (Basics)</p></div>
+                <div><strong>Soft Skills</strong><p>Communication, Problem-solving, Teamwork</p></div>
+            </div>
+        </section>
 
-header p {
-    margin: 5px 0;
-}
+        <section class="experience">
+            <h3>Experience</h3>
+            <div class="job">
+                <h3>Intern – Full-Stack Developer</h3>
+                <p><strong>eTech Prowess</strong>, JP Nagar 7th Phase | August 2024 – Present</p>
+                <ul>
+                    <li>Building user interfaces using HTML, CSS, JavaScript, and Bootstrap.
+                    Enhanced UI/UX and optimized site performance for web projects.
+                    Collaborated in a team to implement responsive designs and improve application features.</li>
+                </ul>
+            </div>
+        </section>
 
-a {
-    color: #1a73e8;
-    text-decoration: none;
-}
+        <section class="projects">
+            <h3>Notable Projects</h3>
+            <p><strong>Personal React Portfolio</strong> <a href="https://zynx-react-portfolio-zynx777s-projects.vercel.app/en" target="_blank">View Project</a></p>
+            <p><strong>MediVend</strong> A Modern Medicine Vending Machine --Skills- HDL, Arduino, Embedded Circuit Design (VLSI)</p>
+            <p><strong>Business Focused Productive Website Design</strong> <a href="https://zynxx777.github.io/darkpanZ/" target="_blank">View Project</a></p>
+            <p><strong>Personal Blog Website</strong> <a href="https://zynxx777.github.io/Portfolio/" target="_blank">View Project</a></p>
+            <p><strong>Mini Music Player (Android App-in progress)</strong> <a href="https://zynxx777.github.io/mini-music-player/" target="_blank">View Project</a></p>
+            <p><strong>Custom ROM Development (In Progress)</strong></p>
+            <p><strong>Responsive Anime Website</strong> <a href="https://zynxx777.github.io/animewebsite/" target="_blank">View Project</a></p>
+        </section>
 
-a:hover {
-    text-decoration: underline;
-}
+        <section class="certifications">
+            <h3>Certifications & Achievements</h3>
+            <ul>
+                <li>VLSI Digital Design - Chip Design & Verilog Programming (July 2024)</li>
+                <li>Basics of Python (July 2024)</li>
+                <li>Network Security (February 2025)</li>
+                <li>Winner of Bug Bounty Contest conducted by 7chats Messenger (September 2021)</li>
+            </ul>
+        </section>
 
-/* Section Styles */
-section {
-    margin-bottom: 20px;
-}
+        <section class="extracurricular">
+            <h3>Extracurricular Activities</h3>
+            <p><strong>Smart India Hackathon:</strong> Collaborated on solving real-world tech problems.</p>
+            <p><strong>Volunteer Work:</strong> Actively involved in charity and community service initiatives.</p>
+            <p><strong>Open Source Contributor</strong></p>
+            <p><strong>Music Production & Sound Design:</strong> Produced EDM tracks specializing in future bounce and hip-hop, collaborating with other artists.</p>
+        </section>
 
-section h3 {
-    font-size: 1.8em;
-    color: #333;
-    border-bottom: 2px solid #1a73e8;
-    padding-bottom: 5px;
-}
-
-ul {
-    padding-left: 20px;
-    list-style-type: square;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.skills-grid div {
-    background-color: #e8f0fe;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Job Experience Styles */
-.job h3 {
-    font-size: 1.2em;
-    color: #1a73e8;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.job p {
-    margin: 4px 0;
-}
-
-/* Project Section Styles */
-.projects p {
-    margin-bottom: 15px;
-}
-
-.projects a {
-    color: #ff4500;
-}
-
-.projects a:hover {
-    text-decoration: underline;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: #777;
-    padding-top: 10px;
-    border-top: 1px solid #ccc;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        <footer>
+            <p>References available upon request.</p>
+        </footer>
+    </div>
+</body>
+</html>

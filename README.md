@@ -16,6 +16,8 @@
 
 🚀 **Driven by curiosity and a passion for exploring tech and electronics**, I specialize in **breaking, building, and optimizing systems**. Skilled in **full-stack development, Android development**, and **reverse engineering**, I am deeply inclined toward **cybersecurity and troubleshooting complex tech**. Constantly **pushing boundaries, learning new technologies**, and **seeking opportunities to innovate**.
 
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
 ## 🏆 Notable Achievements
 
 - **Bug Bounty Winner** in **7Chats Messenger**
@@ -23,12 +25,14 @@
 - Expertise in **Music Production & Sound Design**
 - More at [My Achievements](https://zynxx777.github.io/Portfolio/pc.html)
 
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
 ## 🚀 Projects
 
 | Project | Live Demo | Repository | Tech Stack |
 |---------|------------|-------------|-------------|
-| **Music Player** | [View](https://zynxx777.github.io/Portfolio/resume.html) | Private | React, Redux, Tailwind, Node.js |
-| **React Portfolio** | [View](https://zynx-react-portfolio-zynx777s-projects.vercel.app/en) | [GitHub](https://github.com/Zynxx777/React-Portfolio) | React, TypeScript, Next.js |
+| **Music Player** | [View](https://zynxx777.github.io/mini-music-player/) | Private | Flutter/Dart, Java/Kotlin, Node.js |
+| **React Portfolio** | [View](https://zynx-react-portfolio-zynx777s-projects.vercel.app/en) | [GitHub](https://github.com/Zynxx777/React-Portfolio) | Tailwind, React, TypeScript, Next.js, npm |
 | **Bedroom Portfolio** | [View](https://zynxx777.github.io/Portfolio/resume.html) | Private | HTML, CSS, JS |
 
 ## ✍ Blog & Articles
